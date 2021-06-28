@@ -73,7 +73,7 @@
 ## man who
 ## info who
 
-## shutdown:									restart:
+## 		shutdown:							restart:
 		1. init 0							1. init 6
 		2. pweroff							2. reboot
 		3. shutdown -h							3.shutdown -r
@@ -422,17 +422,7 @@ place to current user home:
 	#man who
 	#info who
 
-			shutdown:							restart:
-			1. init 0							1. init 6
-			2. pweroff							2. reboot
-			3. shutdown -h							3.shutdown -r
-				i.e								i.e
-				1. shutdown -h now						1. shutdown -r now
-				2. shutdown -h 0						2. shutdown -r 0
-				3. shutdown -h 15						3. shutdown -r 15
-				4. shutdown -h 18.30 						4. shutdown -r 18.30
-			4. halt -p							4.ctrl+alt+delet
-
+			
 ## shutdown cancel: 
 	#shutdown -c
 	
