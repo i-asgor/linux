@@ -584,116 +584,117 @@ output redirect(>,>>):
 #cal>>  /root/date.txt     (file create or already file create  so previous file information and put new information)
 
 #shift+zz(command mode)
-wc(word count)
-#wc filename
-#wc -w filename
-#wc -l filename
-#wc -c filename
-where, w = word
-	l= line
-	c=character
-1    2 3 4  5    6      7
-root:x:0:0:root:/root:/bin/bash		
-1. login name
-2. password (x means password)
-3. uid (user id)
-4. Gid (group id)
-5. user comments
-6. home directory
-7. shell
+	#wc(word count)
+	#wc filename
+	#wc -w filename
+	#wc -l filename
+	#wc -c filename
+	where, w = word
+		l= line
+		c=character
+	1    2 3 4  5    6      7
+	root:x:0:0:root:/root:/bin/bash		
+	1. login name
+	2. password (x means password)
+	3. uid (user id)
+	4. Gid (group id)
+	5. user comments
+	6. home directory
+	7. shell
 
 
-vi/vim:
-two types mode 
-1. command mode
-2. insert mode
+	vi/vim:
+	two types mode 
+	1. command mode
+	2. insert mode
 
-#vi filename
+	#vi filename
 
-i=immediately insert or insert btn
-a= insert after the cursor
-o=open new line under cursor
-O=open new line up the cursor
+	i=immediately insert or insert btn
+	a= insert after the cursor
+	o=open new line under cursor
+	O=open new line up the cursor
 
-:x! =save and exit
-:wq! =write and quit
-:q! =exit without saving
-:w = write but not quit
+	:x! =save and exit
+	:wq! =write and quit
+	:q! =exit without saving
+	:w = write but not quit
 
-#vimdiff command /tmp/file7
+	#vimdiff command /tmp/file7
 
 
-message of the day -motd:
-vi /etc/motd   (normally blank we can set any message)
+	message of the day -motd:
+	#vi /etc/motd   (normally blank we can set any message)
 
-virtually line add:
-:set number
-or 
-:set nu
+### virtually line add:
+	:set number
+	or 
+	:set nu
 
-number remove
-:set nonumber
-or
-:set nonu
+### number remove
+	:set nonumber
+	or
+	:set nonu
 
-ngg = nth line
-gg= 1st line
-G=last line
-10gg= 10th line
-10G= 10th line
-j= 1 line jump
-3j=3 line jump
-k= 1 line kick
-3k= 3 line kick
+	ngg = nth line
+	gg= 1st line
+	G=last line
+	10gg= 10th line
+	10G= 10th line
+	j= 1 line jump
+	3j=3 line jump
+	k= 1 line kick
+	3k= 3 line kick
 
-10gg === :10 --10th line
-		 : 1 -- 1st line
-		 : $ -- last line
+	10gg === :10 --10th line
+			 : 1 -- 1st line
+			 : $ -- last line
 		
-hostname change:
-#hostname <new hostname>  (temporary change)
-#hostnamectl
-#hostnamectl set-hostname <new hostname>
-or 
-#vi /etc/hostname
-update hostname:
-#bash
+### hostname change:
+	#hostname <new hostname>  (temporary change)
+	#hostnamectl
+	#hostnamectl set-hostname <new hostname>
+	or 
+	#vi /etc/hostname
+### update hostname:
+	#bash
 
-hostname two types 
-1. static
-2. Dynamic
+### hostname two types 
+	1. static
+	2. Dynamic
 
-DHCP types hostname no file
-#hostnamectl set-hostname desktop8.example.com
+### DHCP types hostname no file
+### hostnamectl set-hostname desktop8.example.com
 
-cp(copy files/ folder):
-#cp<src><dst>
-			cp /root/class7/commands   /tmp
-				-----(src)---------    -(dst)--
-#cp<src1><src2><src3> ...<srcN><dst>	
-			cp /etc/motd  /etc/passwd   /tmp
-				(src1)      (src1)     -(dst)-
-folder copy just -r add
-#cp -v <src><dst>
-#cp -f <src><dst>
-#cp -p <src><dst>
+### cp(copy files/ folder):
+	#cp<src><dst>
+	#cp /root/class7/commands   /tmp
+	    -----(src)---------    -(dst)--
+	#cp<src1><src2><src3> ...<srcN><dst>	
+	#cp /etc/motd  /etc/passwd   /tmp
+	     (src1)      (src1)     -(dst)-
 
-where, v=verbose
+# folder copy just -r add
+	#cp -v <src> <dst>
+	#cp -f <src> <dst>
+	#cp -p <src> <dst>
+
+	where, v=verbose
 		f=forcely
 		p=preserve
 		
-#cp -pvf<src><dst>
+	#cp -pvf <src> <dst>
 
-directory copy:
-#cp -fr<srcdir><dstdir>
+### directory copy:
+	#cp -fr <srcdir> <dstdir>
 
 
 ## mv(move/ rename):
 # mv <current name><new name>
-		mv  abc		abc.old
-		mv <src><dst>
-		mv  /root/abc   /tmp     (cut--paste)
-		mv  /root/abc   /tmp/abc.old (move & rename)
+		#mv  abc		abc.old
+		#mv <src><dst>
+		#mv  /root/abc   /tmp     (cut--paste)
+		#mv  /root/abc   /tmp/abc.old (move & rename)
 
 				
 
@@ -716,16 +717,16 @@ directory copy:
 
 
 ## Rpm package install
-	rpm -qa
-	rpm -qa | grep bind 
-	rpm -ivh bind….repo
-	rpm -uvh bind
-	rpm -evh bind…repo
-	uname -r
+	#rpm -qa
+	#rpm -qa | grep bind 
+	#rpm -ivh bind….repo
+	#rpm -uvh bind
+	#rpm -evh bind…repo
+	#uname -r
 
 
-	cd /etc/sysconfig/network-scripts
-	Vim ifcfg-eth0
+	#cd /etc/sysconfig/network-scripts
+	#Vim ifcfg-eth0
 	Name=linux
 	Bootproto=none/static
 	Onboot=yes
@@ -735,10 +736,10 @@ directory copy:
 	Dns1=8.8.8.8
 	Dns2=4.4.4.4 
 
-	Systemctl restart network
-	Systemctl enable network
+	#Systemctl restart network
+	#Systemctl enable network
 
-	vim /etc/resolve.conf
-	vim /etc/hosts
-	vim /etc/chrony.conf
-	systemctl restart chronyd
+	#vim /etc/resolve.conf
+	#vim /etc/hosts
+	#vim /etc/chrony.conf
+	#systemctl restart chronyd
