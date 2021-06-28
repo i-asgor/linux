@@ -688,62 +688,57 @@ directory copy:
 #cp -fr<srcdir><dstdir>
 
 
-mv(move/ rename):
-#mv <current name><new name>
-					mv  abc		abc.old
-#mv <src><dst>
-				#mv  /root/abc   /tmp     (cut--paste)
-				#mv  /root/abc   /tmp/abc.old (move & rename)
+## mv(move/ rename):
+# mv <current name><new name>
+		mv  abc		abc.old
+		mv <src><dst>
+		mv  /root/abc   /tmp     (cut--paste)
+		mv  /root/abc   /tmp/abc.old (move & rename)
 
 				
 
-#Yum install bind
-#Yum remove bind
-#Yum update bind
-#Cd /etc/yum.repos.d/
-#Vim abc.repo
-[name]
-Name=
-Baseurl=file:///abc
-Enabled=1
-Gpgcheck=0
+	#Yum install bind
+	#Yum remove bind
+	#Yum update bind
+	#Cd /etc/yum.repos.d/
+	#Vim abc.repo
+	[name]
+	Name=
+	Baseurl=file:///abc
+	Enabled=1
+	Gpgcheck=0
 
-#yum clean all
-#yum repolist
-#yum remove
-#yum update
-
-
-
-Rpm package install
-#rpm -qa
-#rpm -qa | grep bind 
-#rpm -ivh bind….repo
-#rpm -uvh bind
-#rpm -evh bind…repo
-#uname -r
+	#yum clean all
+	#yum repolist
+	#yum remove
+	#yum update
 
 
 
+## Rpm package install
+	rpm -qa
+	rpm -qa | grep bind 
+	rpm -ivh bind….repo
+	rpm -uvh bind
+	rpm -evh bind…repo
+	uname -r
 
 
+	cd /etc/sysconfig/network-scripts
+	Vim ifcfg-eth0
+	Name=linux
+	Bootproto=none/static
+	Onboot=yes
+	Ipaddr=172.25.1.10
+	Gateway=172.25.1.1
+	Prefix=24
+	Dns1=8.8.8.8
+	Dns2=4.4.4.4 
 
-#cd /etc/sysconfig/network-scripts
-#Vim ifcfg-eth0
-Name=linux
-Bootproto=none/static
-Onboot=yes
-Ipaddr=172.25.1.10
-Gateway=172.25.1.1
-Prefix=24
-Dns1=8.8.8.8
-Dns2=4.4.4.4 
+	Systemctl restart network
+	Systemctl enable network
 
-#Systemctl restart network
-#Systemctl enable network
-
-#vim /etc/resolve.conf
-#vim /etc/hosts
-#vim /etc/chrony.conf
-#systemctl restart chronyd
-
+	vim /etc/resolve.conf
+	vim /etc/hosts
+	vim /etc/chrony.conf
+	systemctl restart chronyd
